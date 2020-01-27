@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+
+namespace ExoQueteIEnumerable
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Write a integer:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] newTable = new int[] {5, 8, 100, 84, 37, 850, 64, 2, 49, 21, 10000, 381};
+            int[] nTable = (newTable.Where((x) => x <= n)).ToArray();
+            foreach (int value in nTable)
+            {
+                Console.WriteLine(value);
+            }
+            double average = nTable.Average();
+            Console.WriteLine("The average of table's elements that are minimum are equal to your integer " + n + " is: " + average);
+        }
+    }
+}
